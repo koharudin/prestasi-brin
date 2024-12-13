@@ -3,5 +3,5 @@
 	url = https://gitlab.brin.go.id/brinrockstar/prestasi
 	
 [submodule "frontend"]
-	path = fs
+	path = frontend
 	url = https://github.com/koharudin/frontend-irifair.git

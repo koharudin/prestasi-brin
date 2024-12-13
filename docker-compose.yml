@@ -36,11 +36,24 @@ services:
       - 80:3000
     tty: true
     volumes:
-      - ./frontend:/app
+      - ./frontendx:/app
     environment:
       - NODE_ENV=development 
       - WATCHPACK_POLLING=true
     #command: "yarn dev"
+  frontend2:
+      build: 
+        context: .
+        dockerfile: Dockerfile-frontend2
+      ports:
+        - 82:3000
+      tty: true
+      volumes:
+        - ./frontend2:/app
+      environment:
+        - NODE_ENV=development 
+        - WATCHPACK_POLLING=true
+      #command: "yarn dev"  
   fs :  
     tty: true
     build : 
@@ -49,5 +62,5 @@ services:
     ports :     
         - 85:80
     volumes:
-      - /mnt/d/Apps/prestasi-brin/fs:/var/www:cached
-      - /mnt/d/Apps/prestasi-brin/fs/public:/var/www/html:cached
+      - ./fs:/var/www:cached
+      - ./fs/public:/var/www/html:cached
